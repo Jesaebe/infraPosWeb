@@ -22,6 +22,6 @@ resource "aws_instance" "web" {
   user_data = base64encode(data.template_file.user_data.rendered)
 
   tags = {
-    Name = "HelloWorld"
+    Name = "JesaWeb"
   }
 }
