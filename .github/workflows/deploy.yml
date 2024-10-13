@@ -13,11 +13,6 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Set up SSH private key
-        run: |
-          echo "${{ secrets.EC2_KEY }}" > private_key.pem
-          chmod 600 private_key.pem
-
       - name: Config BackEnd file
         run: |     
           sed -i 's/_USER_/${{ secrets.DB_USERNAME }}/g' backend/myapi.py
